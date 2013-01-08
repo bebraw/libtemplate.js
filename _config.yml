@@ -1,0 +1,8 @@
+project_base: libtemplate
+project: libtemplate.js
+description: Template for JS libraries designed to work with GitHub Pages and Jekyll
+nick: bebraw
+author: Juho Vepsalainen
+license: MIT
+version: 0.1.0
+jquery: ''

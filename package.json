@@ -1,0 +1,12 @@
+{
+    "name": "libtemplate",
+    "version": "0.1.0",
+    "private": true,
+    "devDependencies": {
+        "grunt": "== 0.3.17",
+        "grunt-jekyll": "== 0.2.2",
+        "grunt-shell": "== 0.1.4",
+        "js-yaml": "== 1.0.3",
+        "underscore.string": "== 2.3.1"
+    }
+}
