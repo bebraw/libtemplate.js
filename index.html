@@ -1,26 +1,52 @@
 ---
 layout: project
 ---
-<p>TODO: include whole README content here!</p>
+<h1>libtemplate.js - Template for JS libraries designed to work with GitHub Pages and Jekyll</h1>
+<p>libtemplate.js makes it easier to start writing JavaScript libraries. It has been
+designed to be used with GitHub (and GitHub pages). In addition it uses Grunt
+as a build system.
 
-<h2>Installation</h2>
+</p>
+<p>In order to use it, simply clone this repository and configure _config.yml to
+your liking.
 
-<p>Add prepackaged <code>dist/{{ site.project }}</code> to your page.</p>
+</p>
+<h2>Dependencies</h2>
+<p>Make sure you have <code>npm</code> installed. You are going to need <code>Jekyll</code> as well. In
+case you wish to use syntax highlighting, install Pygments. You can get the Node
+dependencies simply by using <code>npm install</code> (might need to sudo it).
 
-<h2>Usage</h2>
+</p>
+<p>In order to generate the initial grunt file, use <code>scripts/generate_grunt.js</code>.
+After it has been executed, you should be able to develop the library using
+<code>grunt</code>. Examine the generated file for more details.
 
-<p>TODO: deal with ```language to highlight tag conversion.</p>
+</p>
+<h2>_config.yml Fields</h2>
+<ul>
+<li><code>project_base</code> refers to the project name without a possible suffix (such as .js)</li>
+<li><code>project</code> is meant to contain that</li>
+<li><code>description</code> contains a brief (80-100) description of your project. This is
+something you would use as your GitHub project description.</li>
+<li><code>nick</code> is the nickname you use at GitHub (github.com/\<nick\>)</li>
+<li><code>author</code> is your full name as an author. If there are multiple authors, send
+me a pull request.</li>
+<li><code>license</code> is the license of your project. If there are multiple in use, send
+me a pull request.</li>
+<li><code>version</code> refers to the version number of your library.</li>
+<li><code>jquery</code> refers to version of jQuery to load. If it is empty, it won&#39;t
+be loaded at all in the demo.</li>
+</ul>
+<h2>Code Example</h2>
+<p>This bit is here just to illustrate how Pygments works.
 
-{% highlight javascript %}
-function a() {}
-{% endhighlight %}
+</p>
+{% highlight js %}
+var a = 4;
 
-<h2>TODO</h2>
-
-<p>Make generate_grunt.js less hacky. Parse yaml with a proper lib and replace trim with a nicer implementation.</p>
-
-<p>Move generate_grunt.js and pu.sh to scripts/ ?</p>
-
+function add(a, b) {
+    return a + b;
+}{% endhighlight %}
 <h2>License</h2>
-
-<p>{{ site.project }} is available under {{ site.license }}. See LICENSE for more details.</p>
+<p>libtemplate.js is available under MIT. See LICENSE for more details.
+</p>

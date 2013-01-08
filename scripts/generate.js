@@ -5,17 +5,20 @@ require('js-yaml');
 var fs = require('fs');
 var _s = require('underscore.string');
 
-module.exports = function(name) {
+function generate(name) {
     write(name, transform(read('_' + name), require('../_config.yml')));
-};
+}
+exports.generate = generate;
 
 function read(input) {
     return fs.readFileSync(input, 'utf-8');
 }
+exports.read = read;
 
 function write(target, data) {
     fs.writeFileSync(target, data);
 }
+exports.write = write;
 
 function transform(tpl, ctx) {
     return tpl.replace(/\{\{ [a-z_ ]+ \}\}/gi, function(match) {

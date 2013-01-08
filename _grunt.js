@@ -36,11 +36,14 @@ module.exports = function(grunt) {
         },
         watch: {
             files: ['_config.yml', '_README.md', 'js/**/*.js', 'index.html', 'grunt.js'],
-            tasks: 'concat min jekyll:dev shell:generate_grunt shell:generate_readme'
+            tasks: 'concat min shell:generate_grunt shell:generate_readme shell:generate_index jekyll:dev'
         },
         shell: {
             generate_grunt: {
                 command: './scripts/generate_grunt.js'
+            },
+            generate_index: {
+                command: './scripts/generate_index.js'
             },
             generate_readme: {
                 command: './scripts/generate_readme.js'
@@ -48,7 +51,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', 'concat min jekyll:dev server watch');
+    grunt.registerTask('default', 'concat min shell:generate_grunt shell_generate_readme shell_generate_index jekyll:dev server watch');
 
     grunt.loadNpmTasks('grunt-jekyll');
     grunt.loadNpmTasks('grunt-shell');

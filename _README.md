@@ -32,6 +32,18 @@ me a pull request.
 * `jquery` refers to version of jQuery to load. If it is empty, it won't
 be loaded at all in the demo.
 
+## Code Example
+
+This bit is here just to illustrate how Pygments works.
+
+``` js
+var a = 4;
+
+function add(a, b) {
+    return a + b;
+}
+```
+
 ## License
 
 {{ project }} is available under {{ license }}. See LICENSE for more details.
