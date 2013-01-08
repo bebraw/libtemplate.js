@@ -23,7 +23,7 @@ After it has been executed, you should be able to develop the library using
 * `project` is meant to contain that
 * `description` contains a brief (80-100) description of your project. This is
 something you would use as your GitHub project description.
-* `nick` is the nickname you use at GitHub (github.com/\<nick\>)
+* `nick` is the nickname you use at GitHub (github.com/&lt;nick&gt;)
 * `author` is your full name as an author. You may alternatively use multiple
 authors if you want to.
 * `license` is the license of your project. You may alternatively use multiple
