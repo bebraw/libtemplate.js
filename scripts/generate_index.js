@@ -17,7 +17,7 @@ function transform(data) {
     var tokens = marked.lexer(data).map(function(t) {
         if(t.type == 'code') {
             t.type = 'html';
-            t.text = '{% highlight ' + t.lang + ' %}\n' + t.text + '{% endhighlight %}\n';
+            t.text = '{% highlight ' + t.lang + ' %}\n' + t.text + '\n{% endhighlight %}\n';
         }
 
         return t;
