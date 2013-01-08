@@ -1,6 +1,6 @@
-# libtemplate.js - Template for JS libraries designed to work with GitHub Pages and Jekyll
+# {{ project }} - {{ description }}
 
-libtemplate.js makes it easier to start writing JavaScript libraries. It has been
+{{ project }} makes it easier to start writing JavaScript libraries. It has been
 designed to be used with GitHub (and GitHub pages). In addition it uses Grunt
 as a build system.
 
@@ -34,4 +34,4 @@ be loaded at all in the demo.
 
 ## License
 
-libtemplate.js is available under MIT. See LICENSE for more details.
+{{ project }} is available under {{ license }}. See LICENSE for more details.

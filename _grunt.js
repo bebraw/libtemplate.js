@@ -35,12 +35,15 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: ['_config.yml', 'js/**/*.js', 'index.html', 'grunt.js'],
-            tasks: 'concat min jekyll:dev shell:generate_grunt'
+            files: ['_config.yml', '_README.md', 'js/**/*.js', 'index.html', 'grunt.js'],
+            tasks: 'concat min jekyll:dev shell:generate_grunt shell:generate_readme'
         },
         shell: {
             generate_grunt: {
                 command: './scripts/generate_grunt.js'
+            },
+            generate_readme: {
+                command: './scripts/generate_readme.js'
             }
         }
     });
