@@ -51,7 +51,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', 'concat min shell:generate_grunt shell_generate_readme shell_generate_index jekyll:dev server watch');
+    grunt.registerTask('default', 'concat min shell:generate_grunt shell:generate_readme shell:generate_index jekyll:dev server watch');
 
     grunt.loadNpmTasks('grunt-jekyll');
     grunt.loadNpmTasks('grunt-shell');
