@@ -24,10 +24,10 @@ After it has been executed, you should be able to develop the library using
 * `description` contains a brief (80-100) description of your project. This is
 something you would use as your GitHub project description.
 * `nick` is the nickname you use at GitHub (github.com/\<nick\>)
-* `author` is your full name as an author. If there are multiple authors, send
-me a pull request.
-* `license` is the license of your project. If there are multiple in use, send
-me a pull request.
+* `author` is your full name as an author. You may alternatively use multiple
+authors if you want to.
+* `license` is the license of your project. You may alternatively use multiple
+if you want to.
 * `version` refers to the version number of your library.
 * `jquery` refers to version of jQuery to load. If it is empty, it won't
 be loaded at all in the demo.
