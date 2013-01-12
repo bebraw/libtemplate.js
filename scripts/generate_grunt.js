@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require('./generate').generate('grunt.js');
+require('./generate').generate('_meta/_grunt.js', 'grunt.js');

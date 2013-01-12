@@ -5,8 +5,8 @@ require('js-yaml');
 var fs = require('fs');
 var _s = require('underscore.string');
 
-function generate(name) {
-    write(name, transform(read('_' + name), require('../_config.yml')));
+function generate(source, target) {
+    write(target, transform(read(source), require('../_config.yml')));
 }
 exports.generate = generate;
 

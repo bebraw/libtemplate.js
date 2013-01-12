@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require('./generate').generate('README.md');
+require('./generate').generate('_meta/_README.md', 'README.md');

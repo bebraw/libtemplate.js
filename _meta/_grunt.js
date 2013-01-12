@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         },
         watch: {
             reload: {
-                files: ['_config.yml', '_README.md', 'js/**/*.js', 'index.html', 'grunt.js'],
+                files: ['_config.yml', '_meta/*', 'js/**/*.js', 'index.html', 'grunt.js'],
                 tasks: 'refresh tinylr-reload'
             }
         },
