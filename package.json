@@ -6,6 +6,7 @@
         "grunt": "== 0.3.17",
         "grunt-jekyll": "== 0.2.2",
         "grunt-shell": "== 0.1.4",
+        "tiny-lr": "https://github.com/mklabs/tiny-lr/tarball/master",
         "js-yaml": "== 1.0.3",
         "underscore.string": "== 2.3.1",
         "marked": "== 0.2.7"

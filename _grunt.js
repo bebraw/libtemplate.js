@@ -35,8 +35,10 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: ['_config.yml', '_README.md', 'js/**/*.js', 'index.html', 'grunt.js'],
-            tasks: 'concat min shell:generate_grunt shell:generate_readme shell:generate_index jekyll:dev'
+            reload: {
+                files: ['_config.yml', '_README.md', 'js/**/*.js', 'index.html', 'grunt.js'],
+                tasks: 'concat min shell:generate_grunt shell:generate_readme shell:generate_index jekyll:dev tinylr-reload'
+            }
         },
         shell: {
             generate_grunt: {
@@ -51,8 +53,9 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', 'concat min shell:generate_grunt shell:generate_readme shell:generate_index jekyll:dev server watch');
+    grunt.registerTask('default', 'concat min shell:generate_grunt shell:generate_readme shell:generate_index jekyll:dev server tinylr-start watch');
 
     grunt.loadNpmTasks('grunt-jekyll');
     grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('tiny-lr');
 };
