@@ -2,9 +2,10 @@
 
 require('js-yaml');
 
-var fs = require('fs');
 var marked = require('marked');
 var _s = require('underscore.string');
+
+var utils = require('./utils');
 
 main();
 
@@ -35,14 +36,20 @@ function main() {
     }
 
     function generator(name) {
-        return generate.bind(null, '_meta/_' + name, name);
+        return generate.bind(null, '_meta/_' + name, name, transform);
+    }
+
+    function transform(tpl, ctx) {
+        return tpl.replace(/\{\{ [a-z_ ]+ \}\}/gi, function(match) {
+            return ctx[_s.rtrim(_s.ltrim(match, '{'), '}').trim()];
+        });
     }
 }
 
 function generateIndex() {
     var prefix = '---\nlayout: project\n---\n';
 
-    write('index.html', prefix + transformIndex(read('README.md')));
+    utils.write('index.html', prefix + transformIndex(utils.read('README.md')));
 
     function transformIndex(data) {
         var tokens = marked.lexer(data).map(function(t) {
@@ -61,20 +68,6 @@ function generateIndex() {
     }
 }
 
-function generate(source, target) {
-    write(target, transform(read(source), require('../_config.yml')));
-}
-
-function read(input) {
-    return fs.readFileSync(input, 'utf-8');
-}
-
-function write(target, data) {
-    fs.writeFileSync(target, data);
-}
-
-function transform(tpl, ctx) {
-    return tpl.replace(/\{\{ [a-z_ ]+ \}\}/gi, function(match) {
-        return ctx[_s.rtrim(_s.ltrim(match, '{'), '}').trim()];
-    });
+function generate(source, target, transformer) {
+    utils.write(target, transformer(utils.read(source), require('../_config.yml')));
 }
