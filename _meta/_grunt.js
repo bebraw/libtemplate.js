@@ -41,22 +41,13 @@ module.exports = function(grunt) {
             }
         },
         shell: {
-            generate_grunt: {
-                command: './scripts/generate_grunt.js'
-            },
-            generate_index: {
-                command: './scripts/generate_index.js'
-            },
-            generate_package: {
-                command: './scripts/generate_package.js'
-            },
-            generate_readme: {
-                command: './scripts/generate_readme.js'
+            generate_all: {
+                command: './scripts/generate.js all'
             }
         }
     });
 
-    grunt.registerTask('refresh', 'concat min shell:generate_grunt shell:generate_readme shell:generate_index shell:generate_package jekyll:dev');
+    grunt.registerTask('refresh', 'concat min shell:generate_all jekyll:dev');
     grunt.registerTask('default', 'refresh server tinylr-start watch');
 
     ['grunt-jekyll', 'grunt-shell', 'tiny-lr'].forEach(grunt.loadNpmTasks);
