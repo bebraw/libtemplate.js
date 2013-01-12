@@ -2,7 +2,7 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         meta: {
-            version: '0.1.1',
+            version: '0.1.2',
             banner: '/*! libtemplate.js - v<%= meta.version %> - ' +
                 '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
                 '* http://bebraw.github.com/libtemplate.js/\n' +
