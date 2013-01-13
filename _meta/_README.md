@@ -7,6 +7,8 @@ as a build system.
 In order to use it, simply clone this repository and configure \_config.yml to
 your liking.
 
+foo
+
 ## Dependencies
 
 Make sure you have `npm` installed. You are going to need `Jekyll` as well. In
