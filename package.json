@@ -1,6 +1,6 @@
 {
     "name": "libtemplate.js",
-    "version": "0.1.2",
+    "version": "0.1.4",
     "private": true,
     "devDependencies": {
         "grunt": "== 0.3.17",
