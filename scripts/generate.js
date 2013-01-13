@@ -12,10 +12,10 @@ main();
 function main() {
     var targets = {
         'all': generateAll,
+        'readme': generator('README.md'),
         'index': generateIndex,
         'grunt': generator('grunt.js'),
-        'package': generator('package.json'),
-        'readme': generator('README.md')
+        'package': generator('package.json')
     };
     var target = process.argv[2];
 
