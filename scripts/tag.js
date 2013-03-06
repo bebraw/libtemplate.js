@@ -13,5 +13,11 @@ function main() {
     var version = require('../_config.yml').version;
 
     var git = new Git();
-    git.exec('tag', {}, ['v' + version], function(err, msg) {});
+    git.exec('commit', {}, ['-a', '-m "Bump version"'], function(err, msg) {
+        if(err) return console.error(err);
+
+        git.exec('tag', {}, ['v' + version], function(err, msg) {
+            if(err) return console.error(err);
+        });
+    });
 }
