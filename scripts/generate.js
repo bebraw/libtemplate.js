@@ -14,7 +14,6 @@ function main() {
         'all': generateAll,
         'readme': generator('README.md'),
         'index': generateIndex,
-        'grunt': generator('grunt.js'),
         'package': generator('package.json')
     };
     var target = process.argv[2];

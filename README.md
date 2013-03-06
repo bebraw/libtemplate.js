@@ -4,20 +4,42 @@ libtemplate.js makes it easier to start writing JavaScript libraries. It has bee
 designed to be used with GitHub (and GitHub pages). In addition it uses Grunt
 as a build system.
 
-In order to use it, simply clone this repository and configure \_config.yml to
-your liking.
+Clone this repository to get started. After you have done that `npm install`
+the dependencies. In addition you will need to set up
+[Jekyll](https://github.com/mojombo/jekyll) and [Pygments](http://pygments.org/)
+in case you wish to use syntax highlighting.
 
-## Dependencies
+After the initial cloning, invoke `grunt`. Now you should have a nice, interactive
+development server running. Surf to `localhost:4000` at your browser. If you have
+[set up LiveReload 
+extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)
+the changes you make to the project `_meta` data should cause the browser
+window to refresh automatically. This allows you to prototype your project
+README.md and site in a quick manner.
 
-Make sure you have `npm` installed. You are going to need `Jekyll` as well. In
-case you wish to use syntax highlighting, install Pygments. You can get the Node
-dependencies simply by using `npm install` (might need to sudo it).
+As you can see modifying `_meta/_README.md` causes the changes to propagate to
+the project index. The same goes for modifications made to `_config.yml`. These
+changes propagate to README.md, project index and package information. This
+eases project development somewhat as you have the project metadata in a single
+place and you don't have to worry about keeping separate files up to date.
 
-In order to generate the initial grunt file, use `scripts/generate_grunt.js`.
-After it has been executed, you should be able to develop the library using
-`grunt`. Examine the generated file for more details.
+Besides the basic `grunt` functionality, there are various helpers around. I've
+listed these in the following list:
+
+* `grunt refresh` updates project files based on metadata. Handy if you just
+want to make some quick change.
+* `scripts/tag.js` sets git tag to current commit based on version at metadata
+(`_config.yml`).
+* `scripts/pu.sh` pushes the current changes to GitHub. In addition it pushes
+the contents of the master branch to gh-pages so the index shows up properly at
+GitHub Pages. It also pushes your tags to GitHub.
 
 ## \_config.yml Fields
+
+As there are quite a few fields at `_config.yml`, I've listed their
+descriptions below. You can easily add custom fields to the file and refer to
+them at `_meta`. Simply do this using `field_name` syntax. These fields
+are also available at Jekyll. There you can access them via `site.field_name`.
 
 * `project_base` refers to the project name without a possible suffix (such as .js)
 * `project` is meant to contain that
@@ -34,7 +56,8 @@ be loaded at all in the demo.
 
 ## Code Example
 
-This bit is here just to illustrate how Pygments works.
+This bit is here just to illustrate how Pygments works. The example will render
+with syntax highlighting on both README.md and GitHub Pages index.
 
 ``` js
 var a = 4;
