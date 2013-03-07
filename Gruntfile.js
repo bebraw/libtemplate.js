@@ -56,10 +56,18 @@ module.exports = function(grunt) {
                 safe: true
             }
         },
-        watch: {
-            reload: {
-                files: ['_config.yml', '_meta/*', 'js/**/*.js', 'index.html', 'grunt.js'],
-                tasks: 'refresh'
+        regarde: {
+            js: {
+                files: 'js/**/*.js',
+                tasks: ['refresh']
+            },
+            meta: {
+                files: '_meta/*',
+                tasks: ['refresh']
+            },
+            html: {
+                files: 'index.html',
+                tasks: ['refresh']
             }
         },
         shell: {
@@ -70,13 +78,13 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('refresh', ['concat:basic', 'uglify', 'shell:generate_all', 'jekyll:dev']);
-    grunt.registerTask('default', ['refresh', 'connect:server', 'livereload-start', 'watch']);
+    grunt.registerTask('default', ['refresh', 'connect:server', 'livereload-start', 'regarde']);
 
     ['grunt-jekyll',
      'grunt-shell',
      'grunt-contrib-concat',
      'grunt-contrib-uglify',
-     'grunt-contrib-watch',
+     'grunt-regarde',
      'grunt-contrib-connect',
      'grunt-contrib-livereload'].forEach(grunt.loadNpmTasks);
 };
