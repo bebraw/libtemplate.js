@@ -7,15 +7,27 @@ designed to be used with GitHub (and GitHub pages). In addition it uses Grunt
 as a build system.
 
 </p>
-<p>Clone this repository to get started. After you have done that <code>npm install</code>
-the dependencies. In addition you will need to set up
-<a href="https://github.com/mojombo/jekyll">Jekyll</a> and <a href="http://pygments.org/">Pygments</a>
-in case you wish to use syntax highlighting.
+<h2>Getting Started</h2>
+<ol>
+<li>git clone git@github.com:bebraw/libtemplate.js.git mylib</li>
+<li>cd mylib</li>
+<li>rm -rf .git</li>
+<li>git init</li>
+<li>git add .</li>
+<li>git commit</li>
+</ol>
+<p>As you can see this workflow loses the version history and gives you a blank
+slate to get started with.
 
 </p>
-<p>After the initial cloning, invoke <code>grunt</code>. Now you should have a nice, interactive
-development server running. Surf to <code>localhost:4000</code> at your browser. If you have
-<a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-">set up LiveReload 
+<p>After you have done that <code>npm install</code> the dependencies. In addition you will
+need to set up <a href="https://github.com/mojombo/jekyll">Jekyll</a> and
+<a href="http://pygments.org/">Pygments</a> in case you wish to use syntax highlighting.
+
+</p>
+<p>Now that everything should be set up, invoke <code>grunt</code>. You should have a nice,
+interactive development server running. Surf to <code>localhost:4000</code> at your browser.
+If you have <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-">set up LiveReload 
 extension</a>
 the changes you make to the project <code>_meta</code> data should cause the browser
 window to refresh automatically. This allows you to prototype your project
@@ -29,6 +41,7 @@ eases project development somewhat as you have the project metadata in a single
 place and you don&#39;t have to worry about keeping separate files up to date.
 
 </p>
+<h2>Other Features</h2>
 <p>Besides the basic <code>grunt</code> functionality, there are various helpers around. I&#39;ve
 listed these in the following list:
 
