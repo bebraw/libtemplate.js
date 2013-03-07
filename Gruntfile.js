@@ -13,17 +13,21 @@ module.exports = function(grunt) {
             dest: 'js/dist/'
         },
         concat: {
+            options: {
+                stripBanners: true,
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                    '<%= pkg.author %> - <%= pkg.license %>\n' +
+                    '<%= pkg.homepage %> - ' +
+                    '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
+            },
             basic: {
-                src: ['<%= dirs.src %>/<%= pkg.name %>'],
-                dest: '<%= dirs.dest %>/<%= pkg.name %>'
+                src: ['<%= dirs.src %>'],
+                dest: '<%= dirs.dest %>.js'
             }
         },
         uglify: {
-            options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-            },
             files: {
-                'build/<%= pkg.name %>.min.js': ['src/<%= pkg.name %>']
+                '<%= dirs.dest %>.min.js': ['<%= dirs.src %>']
             }
         },
         connect: {
