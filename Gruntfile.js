@@ -72,7 +72,7 @@ module.exports = function(grunt) {
         },
         shell: {
             generate_all: {
-                command: './scripts/generate.js all'
+                command: './scripts/generate.js'
             }
         }
     });

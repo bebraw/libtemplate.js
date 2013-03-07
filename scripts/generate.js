@@ -19,10 +19,9 @@ function main() {
     };
     var target = process.argv[2];
 
-    if(!target) {
-        console.error('Missing target!');
-    }
-    else if(!(target in targets)) {
+    if(!target) target = 'all';
+
+    if(!(target in targets)) {
         console.error('Invalid target! Try one of these:', Object.keys(targets).join(', '));
     }
     else {
