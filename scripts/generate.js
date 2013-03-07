@@ -12,6 +12,7 @@ main();
 function main() {
     var targets = {
         'all': generateAll,
+        'bower': generator('component.json'),
         'readme': generator('README.md'),
         'index': generateIndex,
         'package': generator('package.json')
