@@ -1,6 +1,8 @@
 {
     "name": "libtemplate",
     "version": "0.2.1",
+    "author": "Juho Vepsalainen",
+    "license": "MIT",
     "private": true,
     "devDependencies": {
         "grunt": "== 0.4.0",
