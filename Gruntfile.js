@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         dirs: {
             src: 'js/libs/<%= pkg.name %>',
-            dest: 'js/dist/'
+            dest: 'js/dist/<%= pkg.name %>'
         },
         concat: {
             options: {
