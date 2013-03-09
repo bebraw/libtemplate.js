@@ -1,6 +1,6 @@
 {
   "name": "libtemplate.js",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "dist/libtemplate.min.js",
   "ignore": [
     "Gruntfile.js",

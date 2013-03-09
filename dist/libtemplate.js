@@ -1,4 +1,4 @@
-/*! libtemplate - v0.2.2 - Juho Vepsalainen - MIT
+/*! libtemplate - v0.2.3 - Juho Vepsalainen - MIT
  - 2013-03-09 */
 // TODO: replace this with your library
 function foo() {
