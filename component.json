@@ -1,5 +1,17 @@
 {
   "name": "libtemplate.js",
   "version": "0.2.2",
-  "main": "js/dist/libtemplate.min.js"
+  "main": "dist/libtemplate.min.js",
+  "ignore": [
+    "Gruntfile.js",
+    "_config.yml",
+    "_layouts/",
+    "_meta/",
+    "_site/",
+    "css/",
+    "index.html",
+    "js/",
+    "package.json",
+    "scripts/"
+  ]
 }
