@@ -1,4 +1,4 @@
-exclude: ['node_modules']
+exclude: ['node_modules', '_meta', 'scripts', 'npm-debug.log', 'README.md', 'Gruntfile.js', 'package.json', 'component.json']
 name: {{ name }}
 name_base: {{ name_base }}
 description: {{ description }}
