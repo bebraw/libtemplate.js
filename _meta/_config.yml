@@ -1,0 +1,9 @@
+exclude: ['node_modules']
+name: {{ name }}
+name_base: {{ name_base }}
+description: {{ description }}
+nick: bebraw
+author: {{ author }}
+license: {{ license }}
+version: {{ version }}
+jquery: ''

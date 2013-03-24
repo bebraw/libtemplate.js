@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
-<title>{{ site.project }} by {{ site.author }}</title>
+<title>{{ site.name }} by {{ site.author }}</title>
 
 <link rel="stylesheet" href="css/vendor/styles.css">
 <link rel="stylesheet" href="css/vendor/pygment_trac.css">
 <link rel="stylesheet" href="css/custom/demo.css">
 <script src="js/vendor/scale.fix.js"></script>
 {% if site.jquery %}<script src="//ajax.googleapis.com/ajax/libs/jquery/{{ site.jquery }}/jquery.min.js" type="text/javascript"></script>{% endif %}
-<script src="dist/{{ site.project_base }}.js"></script>
+<script src="dist/{{ site.name_base }}.js"></script>
 <script src="js/custom/demo.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
@@ -22,13 +22,13 @@
 <body>
 <div class="wrapper">
     <header>
-        <h1>{{ site.project }} {{ site.version }}</h1>
+        <h1>{{ site.name }} {{ site.version }}</h1>
         <p>{{ site.description }}</p>
-        <p class="view"><a href="https://github.com/{{ site.nick }}/{{ site.project }}">View the Project on GitHub <small>{{ site.nick }}/{{ site.project }}</small></a></p>
+        <p class="view"><a href="https://github.com/{{ site.nick }}/{{ site.name }}">View the Project on GitHub <small>{{ site.nick }}/{{ site.name }}</small></a></p>
         <ul>
-            <li><a href="https://github.com/{{ site.nick }}/{{ site.project }}/zipball/master">Download <strong>ZIP File</strong></a></li>
-            <li><a href="https://github.com/{{ site.nick }}/{{ site.project }}/tarball/master">Download <strong>TAR Ball</strong></a></li>
-            <li><a href="https://github.com/{{ site.nick }}/{{ site.project }}">View On <strong>GitHub</strong></a></li>
+            <li><a href="https://github.com/{{ site.nick }}/{{ site.name }}/zipball/master">Download <strong>ZIP File</strong></a></li>
+            <li><a href="https://github.com/{{ site.nick }}/{{ site.name }}/tarball/master">Download <strong>TAR Ball</strong></a></li>
+            <li><a href="https://github.com/{{ site.nick }}/{{ site.name }}">View On <strong>GitHub</strong></a></li>
         </ul>
     </header>
     <section>{{ content }}</section>

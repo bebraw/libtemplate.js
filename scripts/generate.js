@@ -13,9 +13,9 @@ function main() {
     var targets = {
         'all': generateAll,
         'bower': generator('component.json'),
+        'config': generator('_config.yml'),
         'readme': generator('README.md'),
-        'index': generateIndex,
-        'package': generator('package.json')
+        'index': generateIndex
     };
     var target = process.argv[2];
 
@@ -68,5 +68,11 @@ function generateIndex() {
 }
 
 function generate(source, target, transformer) {
-    utils.write(target, transformer(utils.read(source), require('../_config.yml')));
+    utils.write(target, transformer(utils.read(source), addProjectBase(require('../package.json'))));
+}
+
+function addProjectBase(conf) {
+    conf.name_base = _s.rtrim(conf.name, '.js');
+
+    return conf;
 }

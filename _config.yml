@@ -1,6 +1,6 @@
 exclude: ['node_modules']
-project_base: libtemplate
-project: libtemplate.js
+name: libtemplate
+name_base: libtemplate
 description: Template for JS libraries designed to work with GitHub Pages and Jekyll
 nick: bebraw
 author: Juho Vepsalainen

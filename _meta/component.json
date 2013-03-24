@@ -1,7 +1,7 @@
 {
-  "name": "{{ project }}",
+  "name": "{{ name }}",
   "version": "{{ version }}",
-  "main": "dist/{{ project_base }}.min.js",
+  "main": "dist/{{ name_base }}.min.js",
   "ignore": [
     "Gruntfile.js",
     "_config.yml",
