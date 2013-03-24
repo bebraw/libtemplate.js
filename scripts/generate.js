@@ -35,7 +35,7 @@ function main() {
     }
 
     function generator(name) {
-        return generate.bind(null, '_meta/_' + name, name, transform);
+        return generate.bind(null, '_meta/' + name, name, transform);
     }
 
     function transform(tpl, ctx) {
