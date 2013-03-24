@@ -3,6 +3,7 @@
     "version": "0.2.4",
     "author": "Juho Vepsalainen",
     "license": "MIT",
+    "description": "Template for JS libraries designed to work with GitHub Pages and Jekyll",
     "private": true,
     "devDependencies": {
         "grunt": "0.4.1",

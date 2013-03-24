@@ -3,6 +3,7 @@
     "version": "{{ version }}",
     "author": "{{ author }}",
     "license": "{{ license }}",
+    "description": "{{ description }}",
     "private": true,
     "devDependencies": {
         "grunt": "0.4.1",
