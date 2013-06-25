@@ -1,15 +1,7 @@
-var path = require('path');
-var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
-
-var folderMount = function folderMount(connect, point) {
-    return connect['static'](path.resolve(point));
-};
-
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         dirs: {
-            src: ['js/libs/<%= pkg.name %>.js'],
             dest: 'dist/<%= pkg.name %>'
         },
         concat: {
@@ -21,56 +13,56 @@ module.exports = function(grunt) {
                     '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             basic: {
-                src: ['<%= dirs.src %>'],
+                src: ['js/libs/<%= pkg.name %>.js'],
                 dest: '<%= dirs.dest %>.js'
             }
         },
         uglify: {
             'default': {
                 files: {
-                    '<%= dirs.dest %>.min.js': ['<%= dirs.src %>']
-                }
-            }
-        },
-        connect: {
-            server: {
-                options: {
-                    port: 4000,
-                    base: '_site'
-                }
-            },
-            livereload: {
-                options: {
-                    port: 9001,
-                    middleware: function(connect, options) {
-                        return [lrSnippet, folderMount(connect, '.')];
-                    }
+                    '<%= dirs.dest %>.min.js': '<%= dirs.dest %>.js'
                 }
             }
         },
         jekyll: {
+            server: {
+                source: '.',
+                destination: '_site',
+                server: true,
+                server_port: 4000,
+                auto: true,
+                safe: true
+            },
             dev: {
-                src: '.',
-                dest: '_site',
-                pygments: true,
+                source: '.',
+                destination: '_site',
                 safe: true
             }
         },
-        regarde: {
+        watch: {
+            scripts: {
+                files: 'js/**/*.js',
+                tasks: ['refresh'],
+                options: {
+                    livereload: true
+                }
+            },
             css: {
                 files: 'css/**/*.css',
-                tasks: ['refresh']
-            },
-            js: {
-                files: 'js/**/*.js',
-                tasks: ['refresh']
-            },
-            meta: {
-                files: '_meta/*',
-                tasks: ['refresh']
+                tasks: ['refresh'],
+                options: {
+                    livereload: true
+                }
             },
             html: {
                 files: 'index.html',
+                tasks: ['refresh'],
+                options: {
+                    livereload: true
+                }
+            },
+            meta: {
+                files: '_meta/*',
                 tasks: ['refresh']
             }
         },
@@ -82,13 +74,11 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('refresh', ['concat:basic', 'shell:generate_all', 'uglify', 'jekyll:dev']);
-    grunt.registerTask('default', ['refresh', 'connect:server', 'livereload-start', 'regarde']);
+    grunt.registerTask('default', ['refresh', 'jekyll:server', 'watch']);
 
     ['grunt-jekyll',
      'grunt-shell',
      'grunt-contrib-concat',
      'grunt-contrib-uglify',
-     'grunt-regarde',
-     'grunt-contrib-connect',
-     'grunt-contrib-livereload'].forEach(grunt.loadNpmTasks);
+     'grunt-contrib-watch'].forEach(grunt.loadNpmTasks);
 };
