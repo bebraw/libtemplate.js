@@ -35,8 +35,6 @@ listed these in the following list:
 
 * `grunt refresh` updates project files based on metadata. Handy if you just
 want to make some quick change.
-* `scripts/tag.js` sets git tag to current commit based on version at metadata
-(`_config.yml`).
 * `scripts/pu.sh` pushes the current changes to GitHub. In addition it pushes
 the contents of the master branch to gh-pages so the index shows up properly at
 GitHub Pages. It also pushes your tags to GitHub.
