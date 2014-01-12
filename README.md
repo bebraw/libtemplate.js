@@ -33,7 +33,7 @@ project `README.md` and site in a quick manner.
 Besides the basic `grunt` functionality, there are various helpers around. I've
 listed these in the following list:
 
-* `grunt refresh` updates project files based on metadata. Handy if you just
+* `grunt build` updates project files based on metadata. Handy if you just
 want to make some quick change.
 * `scripts/pu.sh` pushes the current changes to GitHub. In addition it pushes
 the contents of the master branch to gh-pages so the index shows up properly at
