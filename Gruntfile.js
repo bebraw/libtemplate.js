@@ -44,30 +44,10 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            scripts: {
-                files: 'js/**/*.js',
-                tasks: ['refresh'],
-                options: {
-                    livereload: true
-                }
-            },
-            css: {
-                files: 'css/**/*.css',
-                tasks: ['refresh'],
-                options: {
-                    livereload: true
-                }
-            },
-            html: {
-                files: 'index.html',
-                tasks: ['refresh'],
-                options: {
-                    livereload: true
-                }
-            },
-            meta: {
-                files: '_meta/*',
-                tasks: ['refresh']
+            files: ['js/**/*.js', 'css/**/*.css', 'index.html', '_meta/*'],
+            tasks: ['refresh'],
+            options: {
+                livereload: true
             }
         },
         shell: {
