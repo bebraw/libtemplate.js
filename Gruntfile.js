@@ -26,17 +26,21 @@ module.exports = function(grunt) {
         },
         jekyll: {
             server: {
-                source: '.',
-                destination: '_site',
-                server: true,
-                server_port: 4000,
-                auto: true,
-                safe: true
+                options: {
+                    source: '.',
+                    destination: '_site',
+                    serve: true,
+                    port: 4000,
+                    auto: true,
+                    safe: true
+                }
             },
             dev: {
-                source: '.',
-                destination: '_site',
-                safe: true
+                options: {
+                    source: '.',
+                    destination: '_site',
+                    safe: true
+                }
             }
         },
         watch: {
