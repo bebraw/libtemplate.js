@@ -1,6 +1,6 @@
 {
   "name": "libtemplate",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Juho Vepsalainen",
   "license": "MIT",
   "description": "Template for JS libraries designed to work with GitHub Pages and Jekyll",
